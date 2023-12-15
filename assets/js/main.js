@@ -15,7 +15,7 @@ let sheet_id = sheet_link
   .split('/')[0]
 
 // init
-let center, default_zoom, max_zoom, tiles, tiles_attribution
+let map, center, default_zoom, max_zoom, tiles, tiles_attribution
 let parser = new PublicGoogleSheetsParser()
 
 // parse google sheet for map options
@@ -35,15 +35,40 @@ function initMapOptions(data, callback) {
 function initMap() {
   // parse map data from the sheet
   parser.parse(sheet_id, main_subsheet_name).then((data) => {
-    console.log(data)
+    // get direct link to audio files from their drive links
+    prepareSoundLinks(data)
 
     // create map
-    let map = L.map('map').setView(center, default_zoom)
+    map = L.map('map').setView(center, default_zoom)
 
     // add map tiles
     L.tileLayer(tiles, {
       maxZoom: max_zoom,
       attribution: tiles_attribution
     }).addTo(map);
+
+    // add markers
+    addMarkers(data)
+  })
+}
+
+function prepareSoundLinks(data) {
+  data.forEach(function(elem){
+    elem.sound_id = elem.sound_url
+      .split("file/d/")[1]
+      .split("/")[0]
+    elem.sound_direct_link = 'https://drive.google.com/uc?export=download&id=' + elem.sound_id
+  })
+}
+
+function addMarkers(data) {
+  data.forEach(function(elem){
+    let latlng = [elem.latitude, elem.longitude]
+    let audio_elem = `<audio controls>
+      <source src='${elem.sound_direct_link}' type='audio/wav'>
+    </audio>`
+    L.marker(latlng).addTo(map)
+    .bindPopup(audio_elem)
+    .openPopup();
   })
 }
