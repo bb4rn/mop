@@ -1,21 +1,22 @@
 // paste the link to your public google sheet here
-let sheet_link = 'https://docs.google.com/spreadsheets/d/1IdwTTG68o08BeoPjmV410-04hxljbD1R4wK8cybWmdY/edit?usp=sharing'
+const sheet_link = 'https://docs.google.com/spreadsheets/d/1IdwTTG68o08BeoPjmV410-04hxljbD1R4wK8cybWmdY/edit?usp=sharing'
 
 // add the name of your main subsheet here
-let main_subsheet_name = 'soundmap_demo'
+const main_subsheet_name = 'soundmap_demo'
 
 // add the name of your second, "options" subsheet here
-let options_subsheet_name = 'soundmap_demo_options'
+const options_subsheet_name = 'soundmap_demo_options'
 
 // --- no need to edit below this line :) ---
 
 // get sheet id from link
-let sheet_id = sheet_link
+const sheet_id = sheet_link
   .split('spreadsheets/d/')[1]
   .split('/')[0]
 
 // init
 let map, center, default_zoom, max_zoom, tiles, tiles_attribution
+let markers = []
 let parser = new PublicGoogleSheetsParser()
 
 // parse google sheet for map options
@@ -65,10 +66,11 @@ function addMarkers(data) {
   data.forEach(function(elem){
     let latlng = [elem.latitude, elem.longitude]
     let audio_elem = `<audio controls>
-      <source src='${elem.sound_direct_link}' type='audio/wav'>
+      <source src='${elem.sound_direct_link}'>
     </audio>`
-    L.marker(latlng).addTo(map)
-    .bindPopup(audio_elem)
-    .openPopup();
+    let marker = L.marker(latlng)
+    marker.addTo(map).bindPopup(audio_elem)
+    markers.push(marker)
+    console.log(markers)
   })
 }
