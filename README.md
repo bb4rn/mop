@@ -1,6 +1,6 @@
-# soundmap
+# mop
 
-soundmap is a low-effort kit for creating embeddable, interactive soundmaps without the need to code. It's using [Leaflet](https://leafletjs.com/) as an open source map, Google Sheets as a "database" and [public-google-sheets-parser](https://github.com/fureweb-com/public-google-sheets-parser).
+mop is a low-effort kit for creating embeddable, interactive soundmaps without the need to code. It's using [Leaflet](https://leafletjs.com/) as an open source map, Google Sheets as a "database" and [public-google-sheets-parser](https://github.com/fureweb-com/public-google-sheets-parser).
 
 ## configuration
 
