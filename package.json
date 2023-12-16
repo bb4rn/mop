@@ -1,0 +1,22 @@
+{
+  "name": "mop",
+  "version": "1.0.0",
+  "description": "mop is a low-effort kit for creating embeddable, interactive soundmaps without the need to code. It uses Leaflet as an open source map and Google Sheets as a \"database\".",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bb4rn/mop.git"
+  },
+  "author": "camp notes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bb4rn/mop/issues"
+  },
+  "homepage": "https://github.com/bb4rn/mop#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
