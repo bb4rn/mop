@@ -19,7 +19,7 @@ const sheet_id = sheet_link
   .split("/")[0]
 
 // init
-let map, center, default_zoom, max_zoom, tiles, tiles_attribution
+let map, center, default_zoom, max_zoom, tiles, tiles_attribution, marker_color
 let markers = []
 let parser = new PublicGoogleSheetsParser()
 let md = window.markdownit()
@@ -36,6 +36,7 @@ function initMapOptions(data, callback) {
   max_zoom = data[0].max_zoom
   tiles = data[0].tiles_url
   tiles_attribution = data[0].tiles_attribution
+  marker_color = data[0].marker_color
 
   callback()
 }
@@ -58,7 +59,7 @@ function initMap() {
     // add markers
     addMarkers(data)
 
-    document.getElementsByClassName('leaflet-control-attribution')[0].innerHTML += ' | <a href="">mop</a>'
+    document.getElementsByClassName('leaflet-control-attribution')[0].innerHTML += ' | <a href="">🗺️ mop</a>'
   })
 }
 
@@ -72,6 +73,18 @@ function prepareSoundLinks(data) {
 }
 
 function addMarkers(data) {
+  let marker_icon = L.divIcon({
+    html: `<div
+      class="marker-icon"
+      style="background-color:${marker_color}"
+    ></div>`,
+    className: "",
+    iconSize: [20, 20],
+    iconAnchor: [10, 10],
+    popupAnchor: [0, -10]
+  })
+
+
   data.forEach(function(elem, index){
     let latlng = [elem.latitude, elem.longitude]
     let text = elem.text ? md.render(elem.text) : ""
@@ -79,7 +92,9 @@ function addMarkers(data) {
     let html_elem = `<div>${text}</div>
     <audio id="player${index}" src="${elem.sound_direct_link}" controls></audio>`
 
-    let marker = L.marker(latlng)
+    let marker = L.marker(latlng, {
+      icon: marker_icon
+    })
     marker.addTo(map).bindPopup(html_elem)
     
     markers.push(marker)

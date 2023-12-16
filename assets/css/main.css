@@ -10,6 +10,13 @@
 	height: 100vh;
 }
 
+.marker-icon {
+	background-color: black;
+	width: 20px;
+	height: 20px;
+	border-radius: 20px;
+}
+
 /* leaflet styles */
 .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
 	border: none;
