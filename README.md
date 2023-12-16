@@ -18,7 +18,7 @@
 
 ## Tools
 
-1. [Leaflet](https://leafletjs.com/)
-2. [public-google-sheets-parser](https://github.com/fureweb-com/public-google-sheets-parser)
-3. [markdown-it](https://github.com/markdown-it/markdown-it)
-4. [live-server](https://www.npmjs.com/package/live-server)
+- [Leaflet](https://leafletjs.com/)
+- [public-google-sheets-parser](https://github.com/fureweb-com/public-google-sheets-parser)
+- [markdown-it](https://github.com/markdown-it/markdown-it)
+- [live-server](https://www.npmjs.com/package/live-server)
