@@ -59,7 +59,8 @@ function initMap() {
     // add markers
     addMarkers(data)
 
-    document.getElementsByClassName('leaflet-control-attribution')[0].innerHTML += ' | <a href="">🗺️ mop</a>'
+    document.getElementsByClassName('leaflet-control-attribution')[0]
+      .innerHTML += ' | <a href="https://github.com/bb4rn/mop" target="_blank">🗺️ mop</a>'
   })
 }
 
