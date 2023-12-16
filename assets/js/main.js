@@ -2,10 +2,10 @@
 const sheet_link = "https://docs.google.com/spreadsheets/d/1IdwTTG68o08BeoPjmV410-04hxljbD1R4wK8cybWmdY/edit?usp=sharing"
 
 // add the name of your main subsheet here
-const main_subsheet_name = "soundmap_demo"
+const main_subsheet_name = "mop"
 
 // add the name of your second, "options" subsheet here
-const options_subsheet_name = "soundmap_demo_options"
+const options_subsheet_name = "mop_options"
 
 
 
