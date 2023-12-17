@@ -36,11 +36,22 @@
 }
 
 .leaflet-bar a:last-child {
+	border: 1px solid black;
 	border-top: none;
+	border-left: none;
 }
 
 .leaflet-bar a {
+	border-right: 1px solid black;
 	border-bottom-color: black;
+}
+
+.leaflet-top .leaflet-control {
+	margin-top: 0;
+}
+
+.leaflet-left .leaflet-control {
+	margin-left: 0;
 }
 
 .leaflet-control-attribution a,
@@ -51,6 +62,24 @@
 
 .leaflet-container .leaflet-control-attribution {
 	background: white;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	font-size: 8px;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  box-shadow: none;
+}
+
+.leaflet-popup-tip {
+	background-color: white;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.leaflet-popup-content-wrapper {
+	color: black;
+	border: 1px solid black;
 }
 
 .leaflet-popup-content-wrapper {

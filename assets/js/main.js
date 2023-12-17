@@ -53,6 +53,7 @@ function initMap() {
     // add map tiles
     L.tileLayer(tiles, {
       maxZoom: max_zoom,
+      minZoom: 3,
       attribution: tiles_attribution
     }).addTo(map);
 
