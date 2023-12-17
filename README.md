@@ -9,6 +9,13 @@
 1. Clone this repository.
 2. Run `npm ci`.
 3. Run `npm start` to start a local server.
+4. Do the configuration steps below.
+
+### Glitch
+
+1. Remix [this project](https://glitch.com/edit/#!/campnotes-mop).
+2. Check it live at https://<<projectname>>.glitch.me (you can find your project's default name in the top left corner or in the address bar).
+3. Do the configuration steps below.
 
 ## Configuration
 
