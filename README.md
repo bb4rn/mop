@@ -7,7 +7,7 @@
 ### Locally
 
 1. Clone this repository.
-2. Run `npm install`.
+2. Run `npm ci`.
 3. Run `npm start` to start a local server.
 
 ## Configuration
