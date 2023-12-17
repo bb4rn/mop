@@ -64,7 +64,7 @@
 	background: white;
 	border-top: 1px solid black;
 	border-left: 1px solid black;
-	font-size: 8px;
+/*	font-size: 8px;*/
 }
 
 .leaflet-popup-content-wrapper, .leaflet-popup-tip {
