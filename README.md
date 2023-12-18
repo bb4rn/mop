@@ -2,6 +2,8 @@
 
 🗺️ mop is a low-effort kit for creating embeddable, interactive soundmaps without the need to code. It uses [Leaflet](https://leafletjs.com/) as an open source map and Google Sheets as a "database".
 
+![mop_screenshot](assets/images/mop_screenshot.png)
+
 ## Installation
 
 ### Locally
