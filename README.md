@@ -20,10 +20,14 @@
 
 ## Configuration
 
+### Getting started
+
 1. Copy [this sheet](https://docs.google.com/spreadsheets/d/1IdwTTG68o08BeoPjmV410-04hxljbD1R4wK8cybWmdY/edit#gid=0) to your own drive.
 2. Make it publicly accessible and copy its link.
 3. Paste its link into the main.js file (/assets/js/main.js) and check if the subsheet names match the ones in your sheet.
 4. Time to add sounds to your map!
+
+### Editing your map
 
 - To add your sounds to the map, edit the "mop" section of the sheet.
 - To change some things about the map itself, edit the "mop_options" section.
